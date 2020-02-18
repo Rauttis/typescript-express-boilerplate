@@ -1,0 +1,8 @@
+version: '3.7'
+
+services:
+  typescript-express-app:
+    image: typescript-express-app:latest
+    build:
+      context: .
+    init: true
