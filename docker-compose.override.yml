@@ -4,14 +4,13 @@ services:
   typescript-express-app:
     image: typescript-express-app:dev
     build:
-      context: .
       target: dev
     volumes:
-        - ./tsconfig.json:/home/nodejs/app/tsconfig.json:ro
-        - ./tslint.json:/home/nodejs/app/tslint.json:ro
-        - ./jest.config.js:/home/nodejs/app/jest.config.js:ro
-        - ./package-lock.json:/home/nodejs/app/package-lock.json:ro
-        - ./package.json:/home/nodejs/app/package.json:ro
-        - ./src:/home/nodejs/app/src:ro
+      - ./tsconfig.json:/home/nodejs/app/tsconfig.json:ro
+      - ./tslint.json:/home/nodejs/app/tslint.json:ro
+      - ./jest.config.js:/home/nodejs/app/jest.config.js:ro
+      - ./package-lock.json:/home/nodejs/app/package-lock.json:ro
+      - ./package.json:/home/nodejs/app/package.json:ro
+      - ./src:/home/nodejs/app/src:ro
     ports:
       - 3000:3000
